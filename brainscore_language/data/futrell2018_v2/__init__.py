@@ -3,7 +3,7 @@ import logging
 from brainscore_language import data_registry
 # from data_packaging_v2 import upload_natural_stories
 from brainscore_language.data.futrell2018_v2.data_packaging_v2 import upload_natural_stories
-import pickle
+import pandas as pd
 # from brainscore_language.data.futrell2018_v2.data_packaging_v2 import ASSEMBLY_V2
 # from brainscore_language.utils.s3 import load_from_s3
 
@@ -18,8 +18,8 @@ BIBTEX = """@proceedings{futrell2018natural,
   year={2018}
 }"""
 
-with open('test.pickle', 'rb') as f:
-    ASSEMBLY_V2 = pickle.load(f)
+with open('brainscore_language/data/futrell2018_v2/test.pickle', 'rb') as f:
+    ASSEMBLY_V2 = pd.read_pickle(f)
 
 def register_plugin():
     ASSEMBLY_V2.attrs['bibtex'] = BIBTEX

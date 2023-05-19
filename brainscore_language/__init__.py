@@ -77,4 +77,4 @@ def score(model_identifier: str, benchmark_identifier: str) -> Score:
     """
     return wrap_score(__file__,
                       model_identifier=model_identifier, benchmark_identifier=benchmark_identifier,
-                      score_function=_run_score)
+                      score_function=_run_score, conda_active=True)
